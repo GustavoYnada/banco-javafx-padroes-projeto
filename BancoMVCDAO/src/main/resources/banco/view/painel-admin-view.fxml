@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane prefHeight="620.0" prefWidth="900.0" style="-fx-background-color: #6a3fb5;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="banco.controller.PainelAdminController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="460.0" spacing="16.0" style="-fx-background-color: white; -fx-background-radius: 22;">
+         <padding>
+            <Insets bottom="26.0" left="34.0" right="34.0" top="26.0" />
+         </padding>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="#00000066" offsetY="10.0" radius="30.0" />
+         </effect>
+         <children>
+
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+               <children>
+                  <Label text="Painel admin" textFill="#1b2a33" style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Hyperlink fx:id="linkSair" onAction="#onSair" text="Sair" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #6a3fb5;" />
+               </children>
+            </HBox>
+
+            <VBox spacing="10.0" style="-fx-background-color: #f5f0fc; -fx-background-radius: 20;">
+               <padding>
+                  <Insets bottom="18.0" left="20.0" right="20.0" top="16.0" />
+               </padding>
+               <children>
+                  <Label text="Adicionar saldo a uma conta" textFill="#42535d" style="-fx-font-size: 13px; -fx-font-weight: bold;" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <TextField fx:id="txtCpf" promptText="CPF da conta" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 11 14 11 14; -fx-font-size: 14px;" />
+                        <TextField fx:id="txtValor" onAction="#onAdicionarSaldo" prefWidth="120.0" promptText="0,00" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 11 14 11 14; -fx-font-size: 14px;" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnAdicionarSaldo" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAdicionarSaldo" text="Adicionar saldo" style="-fx-background-color: linear-gradient(to right, #6a3fb5, #8e44ad); -fx-background-radius: 14; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 13 0 13 0; -fx-cursor: hand;" />
+               </children>
+            </VBox>
+
+            <VBox spacing="10.0" style="-fx-background-color: #f5f0fc; -fx-background-radius: 20;">
+               <padding>
+                  <Insets bottom="18.0" left="20.0" right="20.0" top="16.0" />
+               </padding>
+               <children>
+                  <Label text="Criar administrador" textFill="#42535d" style="-fx-font-size: 13px; -fx-font-weight: bold;" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <TextField fx:id="txtToken" promptText="Token" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 11 14 11 14; -fx-font-size: 14px;" />
+                        <PasswordField fx:id="txtSenha" onAction="#onCriarAdmin" promptText="Senha (4 a 26)" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 11 14 11 14; -fx-font-size: 14px;" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnCriarAdmin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCriarAdmin" text="Criar administrador" style="-fx-background-color: linear-gradient(to right, #6a3fb5, #8e44ad); -fx-background-radius: 14; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 13 0 13 0; -fx-cursor: hand;" />
+               </children>
+            </VBox>
+
+            <Label fx:id="lblMsg" alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="48.0" prefHeight="48.0" maxHeight="48.0" text="Mensagem" textAlignment="CENTER" visible="false" wrapText="true" style="-fx-background-color: #fdecec; -fx-background-radius: 10; -fx-text-fill: #c0392b; -fx-font-size: 12px; -fx-font-weight: bold; -fx-padding: 8 12 8 12;" />
+         </children>
+      </VBox>
+   </children>
+</StackPane>
